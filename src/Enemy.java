@@ -1,6 +1,7 @@
 
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Enemy {
 
@@ -17,6 +18,9 @@ public class Enemy {
     }
 
     public void tick() {
+
+        Rectangle rect1 = new Rectangle((int) x, (int) y, width, height);
+        x += (Game.ball.x - x - 6) * 0.4;
 
     }
 
