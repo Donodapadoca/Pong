@@ -12,7 +12,7 @@ import java.awt.event.KeyListener;
 
 public class Game extends Canvas implements Runnable, KeyListener {
 
-    public static int WIDTH = 240;
+    public static int WIDTH = 160;
     public static int HEIGHT = 120;
     public static int SCALE = 2;
 
@@ -26,7 +26,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
         this.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
         this.addKeyListener(this);
 
-        player = new Player(100, HEIGHT - 10);
+        player = new Player(100, HEIGHT - 5);
         enemy = new Enemy(100, 0);
         ball = new Ball(100, HEIGHT / 2 - 1);
     }

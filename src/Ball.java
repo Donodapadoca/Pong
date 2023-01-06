@@ -19,8 +19,10 @@ public class Ball {
         this.width = 4;
         this.height = 4;
 
-        dx = new Random().nextGaussian();
-        dy = new Random().nextGaussian();
+        int angle = new Random().nextInt((120 - 45) + 45 + 1);
+
+        dx = Math.cos(Math.toRadians(angle));
+        dy = Math.sin(Math.toRadians(angle));
 
     }
 
@@ -59,12 +61,23 @@ public class Ball {
                 Game.enemy.height);
 
         if (bounds.intersects(boundsPLayer)) {
-            dy *= -1;
+            int angle = new Random().nextInt((120 - 45) + 45 + 1);
+
+            dx = Math.cos(Math.toRadians(angle));
+            dy = Math.sin(Math.toRadians(angle));
+            if (dy > 0) {
+                dy *= -1;
+            }
             vel += 0.02;
         }
 
         else if (bounds.intersects(boundsEnemy)) {
-            dy *= -1;
+            int angle = new Random().nextInt((120 - 45) + 45 + 1);
+            dx = Math.cos(Math.toRadians(angle));
+            dy = Math.sin(Math.toRadians(angle));
+            if (dy < 0) {
+                dy *= -1;
+            }
             vel += 0.02;
         }
 
